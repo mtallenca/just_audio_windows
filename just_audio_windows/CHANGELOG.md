@@ -1,3 +1,6 @@
+## Unreleased
+
+* [fix]: Send channel messages on the platform thread, not on WinRT callback threads ([#63](https://github.com/bdlukaa/just_audio_windows/pull/63))
 ## 0.2.3
 
 * [fix]: Invalid access to media player ([#49](https://github.com/bdlukaa/just_audio_windows/pull/49))
