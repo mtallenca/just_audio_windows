@@ -1,5 +1,6 @@
 ## Unreleased
 
+* [fix]: Do not report `completed` before the duration is known ([#66](https://github.com/bdlukaa/just_audio_windows/pull/66))
 * [fix]: Do not report a source swap as `idle`, which aborted the load in progress ([#65](https://github.com/bdlukaa/just_audio_windows/pull/65))
 * [fix]: Send channel messages on the platform thread, not on WinRT callback threads ([#63](https://github.com/bdlukaa/just_audio_windows/pull/63))
 ## 0.2.3
