@@ -76,7 +76,12 @@ JustAudioWindowsPlugin::~JustAudioWindowsPlugin() {
   // players_ has static storage, so without this the players are destroyed at
   // process exit — after the plugin, after the dispatcher, and after the
   // registrar that owns the window-proc delegate. Tear them down here instead,
-  // while all of that is still alive, then release the dispatcher.
+  // while all of that is still alive, then release the dispatcher. The plugin
+  // is destroyed as the engine shuts down, when the messenger can no longer
+  // take calls, so the players must not unregister their channels.
+  for (auto& player : players_) {
+    player->DisposeForEngineShutdown();
+  }
   players_.clear();
   dispatcher_.reset();
 }
